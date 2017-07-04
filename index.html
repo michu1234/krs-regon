@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/fontello.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="tool-bar"><img class="logo" src="img/logo.png" alt=""></div>
+	<div class="container">
+<!--	MENU  -->
+<div class="menu">
+	<div class="menu-icons menu-icons--appearance">
+							<ul class="menu-list">
+								<li v-on:click="toggleShow" v-bind:class="{activate: isDeactivating, deactivate: isShowing}"><i class="icon-home-outline"></i></li>
+								<li v-on:click="toggleShow" v-bind:class="{activate: isShowing, deactivate: isDeactivating}"><i class="icon-history"></i></li>
+								<li class="menu-icons__icon menu-icons__icon--appearance "><i class=" icon-info-outline"></i></li>
+								<li class="menu-icons__icon menu-icons__icon--appearance "><i class="icon-search"></i></li>
+							</ul>
+						</div>
+	<div v-show="isShowing" class="menu-history menu-history--appearance">
+						<h2>Historia</h2>
+							<ul>
+								<li v-for="task in historyNumber" class="menu-history__example menu-history__example--appearance">{{task.name}} <br><small> {{task.firm}}</small></li>
+							</ul>
+						</div>
+					</div>
+
+
+<!--		CONTENT   -->
+
+<div class="content">
+	<div id="app">
+	<h1>Informator</h1>
+	<h4>Wprowadź numer KRS lub REGON firmy</h4>
+		<label for="input-data">KRS/REGON
+			<input class="main-input--appearance" type="text" name="input-data" v-model="numberToCheck">
+		</label>
+		<button class="myButton" v-on:blur="clearInputs" v-on:click="searchNumber">Sprawdź</button> <span class="start-typing">{{numberToCheck + " ..."}}</span>
+
+	<div class="firm-data">
+				<label for="firmName">Nazwa firmy
+				<input id="firmName" class="currentData" type="text" v-bind:value="firmName">
+			</label>
+			<label for="streetName">Ulica
+				<input id="streetName" class="currentData" type="text" v-bind:value="streetName">
+			</label>
+			<label for="houseNumber">Numer budynku
+				<input id="houseNumber" class="currentData" type="text" v-bind:value="houseNumber">
+			</label>
+		<label for="localNumber">Numer localu
+			<input id="localNumber" class="currentData" type="text" v-bind:value="localNumber">
+		</label>
+			<label for="postalCode">Kod pocztowy
+				<input id="postalCode" class="currentData" type="text" v-bind:value="postalCode">
+			</label>
+			<label for="cityName">Miejscowość
+				<input id="cityName" class="currentData" type="text" v-bind:value="cityName">
+		</label>
+				<label for="cityName">Pełna nazwa
+					<input id="cityName" class="currentData" type="text" v-bind:value="fullName">
+			</label> <span class="errorMessage">{{errorMessage}}</span> </div>
+		<p class="api-info">* API nie obsługuje wszystkich numerów firm... (dla błędnych numerów i nieobsługiwanych numerów zwracana jest wartość false).</p>
+		</div>
+</div>
+	</div>
+	<!--	framework Vue.js  -->
+<script src="js/vue.min.js"></script>
+<!--	biblioteka Axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--	skrytpy  -->
+	<script src="js/script.js"></script>
+</body>
+</html>

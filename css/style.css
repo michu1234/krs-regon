@@ -1,0 +1,219 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+h1, h2, h3, h4, h5, p, label, input{
+	font-family: 'Montserrat', sans-serif;
+}
+small {
+	font-size: 10px;
+	color: #006f6f
+}
+p {
+	font-size: 10px;
+	color: gray;
+}
+h4 {
+	margin-top: -25px;
+}
+input {
+	font-size: 15px;
+	outline: none;
+}
+label {
+	font-weight: 300;
+	font-size: 13px;
+	padding-left: 10px;
+}
+.main-input--appearance {
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #c6c6c6;
+	width: 400px;
+	text-align: center;
+}
+.myButton {
+	-moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	-webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+	background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+	background-color:#33bdef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+	background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+	background-color:#019ad2;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.api-info {
+	display: block;
+	max-width: 500px;
+	line-height: 20px;
+	position: absolute;
+	bottom: 0;
+}
+
+
+.errorMessage {
+	display: block;
+	color: red;
+	width: 100%;
+	text-align: left;
+	margin-top: 40px;
+}
+
+.tool-bar {
+	height: 40px;
+	box-shadow: 0 0 20px;
+	z-index: 2;
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+}
+.logo {
+	width: 120px;
+	padding: 4px;
+}
+
+.container {
+	display: flex;
+}
+.menu-icons {
+	height: 100vh;
+	position: fixed;
+}
+.menu-icons__icon {
+	margin-bottom: 32px;
+}
+.menu-icons--appearance {
+	background: #333333;
+}
+.menu-icons__icon--appearance {
+	color: #4b4b4b;
+	list-style: none;
+	padding-bottom: 20px;
+	font-size: 25px;
+	margin-left: -35px;
+	margin-right: 5px;
+	padding: 10px;
+	transition: all 0.1s;
+}
+.menu-icons__icon--appearance:hover {
+	background: #2e2e2e;
+	outline: 2px inset #464646;
+	z-index:-3;
+}
+.menu-history {
+	height: 100vh;
+	min-width: 150px;
+}
+.menu-history--appearance {
+	background: #00D1E5;
+	min-width: 260px;
+	padding-left: 80px;
+	color: white;
+}
+.menu-history__example--appearance {
+	margin-bottom: 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #00ebff;
+	color: #ffffff;
+	list-style:circle;
+}
+.activate {
+	background: #00D1E5;
+	outline: 8px solid #00D1E5;
+	border: 1px solid #00afbf;
+	color: #eafff9;
+	list-style: none;
+	padding-bottom: 20px;
+	font-size: 25px;
+	margin-left: -35px;
+	margin-right: 5px;
+	padding: 10px;
+	transition: all 0.1s;
+	z-index: 4;
+	margin-bottom: 32px;
+}
+.activate:hover {
+	background: #00e9ff;
+}
+.deactivate {
+	margin-bottom: 32px;
+	color: #4b4b4b;
+	list-style: none;
+	padding-bottom: 20px;
+	font-size: 25px;
+	margin-left: -35px;
+	margin-right: 5px;
+	padding: 10px;
+	outline: 0 inset #464646;
+	transition: all 0.1s;
+}
+.deactivate:hover {
+	background: #2e2e2e;
+	outline: 2px inset #464646;
+	z-index:-3;
+}
+.menu {
+	display: flex;
+}
+.menu-list {
+	width: 70px;
+}
+.firm-data {
+	max-width: 800px;
+}
+.start-typing{
+	color: gray;
+	font-size: 14px;
+}
+.currentData {
+	border: none;
+	border-bottom: 1px solid #00ced6;
+	padding-top: 20px;
+	margin-left: 20px;
+	width: 500px;
+	text-indent: 20px;
+}
+#app {
+	padding-left: 80px;
+	padding-top: 50px;
+}
+.firm-data {
+	padding-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+}
